@@ -36,9 +36,9 @@ class OrderP:
     def checkout(self):
         print (f"your purchase of")
         for (p,q) in self.items:
-            print (f"   {q}  {p.name} , with a Unit Price of: {p.price} ")
-        print(f'''with a total of{self.total_amount} is successful
-              Your order Id id : {self.timestamp_part}-{OrderP.counter}''') 
+            print (f"{q} {p.name} , with a Unit Price of: {p.price}EGP")
+        print(f'''with a total of {self.total_amount}EGP is successful
+        Your order Id : {self.timestamp_part}-{OrderP.counter}''') 
         
     def payment(self):
         print("Please, choose a payment method")
@@ -51,11 +51,11 @@ class OrderP:
         elif action == "2":
             cardNumber= input('Please, enter the 16 digits on your card')
             try:
-                if len(cardNumber)==16:
+                if len(cardNumber)==16 and int(cardNumber)>0:
                     self.checkout()
 
                 else:
-                    print("invalid card number")
+                    print("Invalid card number.")
                     print("Any key to exit")
                     print("2.Retry")
                     action = input("Please choose (1-2): ")
@@ -63,10 +63,15 @@ class OrderP:
                         self.payment()
                     else:
                         return
-                  
-                    
-            except:
-                print('card nubmer not valid')
-
+            except ValueError:
+                print('Invalid card number.')
+                print("Any key to exit")
+                print("2.Retry")
+                action = input("Please choose (1-2): ")
+                if action == "2":
+                    self.payment()
+                else:
+                    return
+    
         
         

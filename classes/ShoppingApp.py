@@ -12,8 +12,8 @@ class ShoppingApp:
         print("Welcome to the Shopping App!")
         print("1. Browse Products")
         print("2. View Cart")
-        print("3. Add to Cart")
-        print("4. Place Order")
+        print("3. Add Items to Cart")
+        print("4. Go to Payment")
         print("5. Exit")
     
     def browse_products(self):
