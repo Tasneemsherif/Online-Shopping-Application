@@ -6,12 +6,22 @@ class Cart:
         self.inventory = inventory
 
     def add_item(self, product, quantity):
-        if quantity <= product.quantity:
-           self.items.append((product, quantity))
-           return f"Added {product.name} - {product.product_id} to your cart successfully!"
+        if len(self.items) > 0 :
+            for (p,q) in self.items:
+                if p.product_id== product.product_id:
+                    q += quantity
+                if q <= product.quantity:
+                    #self.items.append((product, quantity))
+                    return f"Added {product.name} - {product.product_id} to your cart successfully!"
+                else:
+                    return'insufficient quantity'
         else:
-          return "Sorry, insuffecient quantity!"
-        
+            if quantity <= product.quantity:
+                    self.items.append((product, quantity))
+                    return f"Added {product.name} - {product.product_id} to your cart successfully!"        
+            else:
+                    return'insufficient quantity'
+
     def view_cart(self):
         if len(self.items) == 0:
             print("Your cart is empty. Please add items to your cart first.")

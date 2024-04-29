@@ -1,6 +1,7 @@
 from colorama import Fore
 from classes.Inventory import Inventory
 from classes.Product import Product
+from classes.OrderP import OrderP
 class ShoppingApp:
     def __init__(self,inventory,cart):
         self.products = []
@@ -50,12 +51,15 @@ class ShoppingApp:
         else: return
 
     def place_order(self):
-        if not self.cart:
+        if not self.cart.items:
             print("Your cart is empty. Please add items to your cart first.")
             return
 
         print("Placing Order...")
         # Add your logic for placing the order here
+        new_order = OrderP(self.cart)
+        new_order.check_decrement()
+        new_order.total()
         # This could involve processing payment, generating an order confirmation, etc.
         print("Order placed successfully!")
 
