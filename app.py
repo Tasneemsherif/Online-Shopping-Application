@@ -7,8 +7,8 @@ inventory = Inventory()
 cart = Cart(inventory)
 
 # Add initial products
-inventory.add_product(101, 'T-shirt', 450, 50)
-inventory.add_product(102, 'Jeans', 600, 30)
+inventory.add_product(101, 'T-shirt', 450, 50)#40
+inventory.add_product(102, 'Jeans', 600, 30)#10
 app = ShoppingApp(inventory,cart)
 
 app.products = inventory.products

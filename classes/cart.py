@@ -6,16 +6,17 @@ class Cart:
         self.inventory = inventory
 
     def add_item(self, product, quantity):
-        if len(self.items) > 0 :
-            for (p,q) in self.items:
-                if p.product_id== product.product_id:
-                    q += quantity
-                if q <= product.quantity:
-                    #self.items.append((product, quantity))
+        product_exists = False
+        for i,(p,q) in enumerate(self.items):
+            if p.product_id == product.product_id:
+                product_exists = True
+                if q + quantity <= product.quantity:
+                    self.items[i] = (product , q + quantity)
                     return f"Added {product.name} - {product.product_id} to your cart successfully!"
                 else:
                     return'insufficient quantity'
-        else:
+                break
+        if not product_exists:
             if quantity <= product.quantity:
                     self.items.append((product, quantity))
                     return f"Added {product.name} - {product.product_id} to your cart successfully!"        

@@ -2,6 +2,7 @@ from colorama import Fore
 from classes.Inventory import Inventory
 from classes.Product import Product
 from classes.OrderP import OrderP
+from classes.cart import Cart
 class ShoppingApp:
     def __init__(self,inventory,cart):
         self.products = []
@@ -64,7 +65,8 @@ class ShoppingApp:
         print("Order placed successfully!")
 
         # Clear the cart after placing the order
-        self.cart = []
+        self.cart = Cart(self.inventory)
+
 
     def run(self):
         while True:
