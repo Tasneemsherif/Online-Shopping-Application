@@ -30,3 +30,8 @@ app.run()
 
 # if __name__ == "__main__":
 #     main()
+
+# Order placement class
+# from classes.Inventory import Inventory
+# from classes.Product import Product
+# from classes.cart import Cart
