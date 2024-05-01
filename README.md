@@ -1,5 +1,5 @@
 # Online Shopping Application
-Welcome to the **Simple Online Shopping Application** project! This project is designed to implement a simple shopping experience in Python. Users can browse products, add them to their cart, and place orders. Additionally, this project covers aspects like product inventory management, error handling, and function modularity for code reusability and maintainability.
+Welcome to the **Online Shopping Application** project! This project is designed to implement a shopping experience in Python. Users can browse products, add them to their cart, and place orders. Additionally, this project covers aspects like product inventory management, error handling, and function modularity for code reusability and maintainability.
 
 ## Features
 1. **Product Inventory Management**: Manage the product inventory with functions to add, update, or remove products.
